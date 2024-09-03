@@ -1,6 +1,8 @@
 import logging, random, time
 from aiogram import Bot, Dispatcher, executor, types
-
+import os
+from back import keep_alive
+keep_alive()
 from aiogram.types import ReplyKeyboardRemove, \
     ReplyKeyboardMarkup, KeyboardButton, \
     InlineKeyboardMarkup, InlineKeyboardButton
@@ -8,7 +10,7 @@ from aiogram.types import ReplyKeyboardRemove, \
 from aiogram.utils.markdown import hlink
 
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token='7509353699:AAFs3ZJ2QZhQYXLT6DrIx1NUpUnu3I8a1Fk')
+bot = Bot(token=os.environ.get('7509353699:AAFs3ZJ2QZhQYXLT6DrIx1NUpUnu3I8a1Fk'))
 dp = Dispatcher(bot)
 
 gift = InlineKeyboardMarkup()
